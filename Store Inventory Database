@@ -1,0 +1,24 @@
+--Create store inventory database
+ 
+CREATE TABLE Liberty_Fitness(id INTEGER PRIMARY KEY, Name text, UnitPrice INTEGER, Price INTEGER, Profit INTEGER);
+INSERT into Liberty_Fitness VALUES(1, "Protein Bar", 1,2,1);
+INSERT into Liberty_Fitness Values(2, "Preworkout",2,4,2);
+INSERT into Liberty_Fitness Values(3, "Protein Shake",1,2,1);
+INSERT into Liberty_Fitness Values(4, "Towel",5,10,5);
+INSERT into Liberty_Fitness Values(5, "Hand Sanitizer",1,2,1);
+INSERT into Liberty_Fitness Values(6, "Hair Band",2, 5,3);
+INSERT into Liberty_Fitness Values(7, "Shoe Laces",1,2,1);
+INSERT into Liberty_Fitness Values(8, "Deodorant",2,5,3);
+INSERT into Liberty_Fitness Values(9, "Body Wash",1,4,3);
+INSERT into Liberty_Fitness Values(10, "Face Wash",2,5,3);
+INSERT into Liberty_Fitness Values(11, "Lifting Straps",15,20,5);
+INSERT into Liberty_Fitness Values(12, "Hand Chalk",1,2,1);
+INSERT into Liberty_Fitness Values(13, "Protein Shot",1,3,2);
+INSERT into Liberty_Fitness Values(14, "Green Juice",2,8,6);
+INSERT into Liberty_Fitness Values(15, "BCAA Drink",3,4,1);
+
+--Display total profit of items.
+SELECT SUM(profit) FROM Liberty_Fitness;
+
+--Display product by unit price.
+SELECT * FROM Liberty_Fitness ORDER BY unitprice desc; 
