@@ -1,24 +1,24 @@
---Create store inventory database
+--Create inventory database
 
-CREATE TABLE Liberty_Fitness(id INTEGER PRIMARY KEY, Name text, UnitPrice INTEGER, Price INTEGER, Profit INTEGER);
-INSERT into Liberty_Fitness VALUES(1, "Protein Bar", 1,2,1);
-INSERT into Liberty_Fitness Values(2, "Preworkout",2,4,2);
-INSERT into Liberty_Fitness Values(3, "Protein Shake",1,2,1);
-INSERT into Liberty_Fitness Values(4, "Towel",5,10,5);
-INSERT into Liberty_Fitness Values(5, "Hand Sanitizer",1,2,1);
-INSERT into Liberty_Fitness Values(6, "Hair Band",2, 5,3);
-INSERT into Liberty_Fitness Values(7, "Shoe Laces",1,2,1);
-INSERT into Liberty_Fitness Values(8, "Deodorant",2,5,3);
-INSERT into Liberty_Fitness Values(9, "Body Wash",1,4,3);
-INSERT into Liberty_Fitness Values(10, "Face Wash",2,5,3);
-INSERT into Liberty_Fitness Values(11, "Lifting Straps",15,20,5);
-INSERT into Liberty_Fitness Values(12, "Hand Chalk",1,2,1);
-INSERT into Liberty_Fitness Values(13, "Protein Shot",1,3,2);
-INSERT into Liberty_Fitness Values(14, "Green Juice",2,8,6);
-INSERT into Liberty_Fitness Values(15, "BCAA Drink",3,4,1);
+CREATE TABLE stocks (id INTEGER PRIMARY KEY, name TEXT, open INTEGER, close INTEGER, percentage INTEGER);
+INSERT into stocks VALUES (1, "AAPL", 178.36, 177.70, -.09);
+INSERT into stocks VALUES (2, "NVDA", 417.67, 407.60, -3.62);
+INSERT into stocks VALUES (3, "TSLA", 245.43, 242.26, -1.10);
+INSERT into stocks VALUES (4, "LCID", 6.78, 6.62, -2.06);
+INSERT into stocks VALUES (5, "AMZN", 138.96, 138.45, -.11);
+INSERT into stocks VALUES (6, "RIVN", 22.00, 21.46, -.33);
+INSERT into stocks VALUES (7, "MSFT", 323.50, 321.01, -.57);
+INSERT into stocks VALUES (8, "GOOGL", 129.95, 129.36, -.08);
+INSERT into stocks VALUES (9, "F", 12.26, 12.13, -.08);
+INSERT into stocks VALUES (10, "AMD", 110.24, 107.42, -2.40);
+INSERT into stocks VALUES (11, "META", 305.10, 301.10, -1.34);
+INSERT into stocks VALUES (12, "AMC", 4.97, 3.86, -5.64);
+INSERT into stocks VALUES (13, "DIS", 91.12, 88.75, -2.98);
+INSERT into stocks VALUES (14, "WMT", 160.59, 161.20, +.61);
+INSERT into stocks VALUES (15, "NFLX", 429.10, 421.80, -1.92);
 
---Display total profit of items.
-SELECT SUM(profit) FROM Liberty_Fitness;
+--Display all stocks ordered by daily percentage.
+SELECT * FROM stocks ORDER BY percentage;
 
---Display product by unit price.
-SELECT * FROM Liberty_Fitness ORDER BY unitprice desc; 
+--Display total percentage of stocks grouped by their ID.
+SELECT name, SUM(percentage) FROM stocks GROUP BY id;
